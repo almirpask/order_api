@@ -15,7 +15,7 @@ export enum OrderStatus {
 export class Order {
   @PrimaryGeneratedColumn('uuid')
   id: string;
-  @Column({ type: 'decimal' })
+  @Column({ type: 'decimal', precision: 10, scale: 2 })
   total: number;
   @Column({})
   client_id: number;
