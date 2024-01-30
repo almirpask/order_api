@@ -32,3 +32,13 @@ Content-Type: application/json
   ],
   "card_hash": "1234678"
 }
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "username": "john",
+  "password": "changeme"
+}
