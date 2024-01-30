@@ -13,8 +13,6 @@ import { Order } from './order.entity';
 export class OrderItem {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column({ type: 'int' })
-  order_id: number;
   @Column({})
   quantity: number;
   @Column({ type: 'decimal', precision: 10, scale: 2 })
@@ -27,7 +25,7 @@ export class OrderItem {
   @Column({})
   product_id: string;
 
-  @ManyToOne(() => Product, (order) => order.id)
+  @ManyToOne(() => Order, (order) => order.id)
   order: Order;
 
   @CreateDateColumn()

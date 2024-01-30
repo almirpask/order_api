@@ -35,7 +35,7 @@ export class Order {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => OrderItem, (item) => item.order)
+  @OneToMany(() => OrderItem, (item) => item.order, { cascade: ['insert'] })
   items: OrderItem[];
 
   static create(input: CreateOrderCommand) {
@@ -46,7 +46,6 @@ export class Order {
       const orderItem = new OrderItem();
       orderItem.product_id = item.product_id;
       orderItem.quantity = item.quantity;
-      orderItem.order = order;
       orderItem.price = item.price;
       return orderItem;
     });

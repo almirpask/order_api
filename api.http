@@ -12,3 +12,23 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:3000/orders
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "product_id": "028ae015-1ddb-480a-9f1c-1c99a85a66a2",
+      "quantity": 1
+    },
+    {
+      "product_id": "0ed803c9-f5a7-47ea-a4e3-038a9d77ac75",
+      "quantity": 4
+    }
+    
+  ],
+  "card_hash": "1234678"
+}
