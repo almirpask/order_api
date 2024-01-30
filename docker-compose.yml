@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: order_api
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    command: ./entrypoint.sh
+    depends_on:
+      - db
+      - rabbitmq
+  db:
+    image: mysql:8.0.30
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=order_api
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    ports:
+      - 15672:15672
+      - 5672:5672
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin
