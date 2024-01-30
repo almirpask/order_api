@@ -6,6 +6,8 @@ import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
 import { OrdersModule } from './orders/orders.module';
 import { ProductsModule } from './products/products.module';
 import { Product } from './products/entities/product.entity';
+import { Order } from './orders/entities/order.entity';
+import { OrderItem } from './orders/entities/order-item.entity';
 
 @Module({
   imports: [
@@ -16,7 +18,7 @@ import { Product } from './products/entities/product.entity';
       username: 'root',
       password: 'root',
       database: 'order_api',
-      entities: [Product],
+      entities: [Product, Order, OrderItem],
       synchronize: true,
       logging: true,
     }),
