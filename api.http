@@ -13,11 +13,14 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/orders
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOiIxIiwiaWF0IjoxNzA2NjU5MjE5LCJleHAiOjE3MDY3NDU2MTl9.3gtkOWcXGmWHeJ-zzk8VHQBU_FLPy1aRBMANVPwk_WY
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzIiwic3ViIjoiMiIsImlhdCI6MTcwNjY2MDM1NywiZXhwIjoxNzA2NzQ2NzU3fQ.z33n2w4PHKbY8UXZU2eQ1ccaCdaKoYzEuTrS3eyVSe8
+###
+GET http://localhost:3000/orders/58007565-9863-4484-a535-b064dc25c2bd
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzIiwic3ViIjoiMiIsImlhdCI6MTcwNjY2MDM1NywiZXhwIjoxNzA2NzQ2NzU3fQ.z33n2w4PHKbY8UXZU2eQ1ccaCdaKoYzEuTrS3eyVSe8
 ###
 POST http://localhost:3000/orders
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocmlzIiwic3ViIjoiMiIsImlhdCI6MTcwNjY2MDM1NywiZXhwIjoxNzA2NzQ2NzU3fQ.z33n2w4PHKbY8UXZU2eQ1ccaCdaKoYzEuTrS3eyVSe8
 
 {
   "items": [
@@ -40,6 +43,6 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-  "username": "john",
-  "password": "changeme"
+  "username": "chris",
+  "password": "secret"
 }

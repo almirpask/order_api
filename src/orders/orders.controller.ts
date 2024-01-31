@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Param, UseGuards } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  UseGuards,
+  Req,
+} from '@nestjs/common';
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { AuthGuard } from 'src/auth/auth.guard';
@@ -9,17 +17,21 @@ export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
   @Post()
-  create(@Body() createOrderDto: CreateOrderDto) {
-    return this.ordersService.create(createOrderDto);
+  create(@Body() createOrderDto: CreateOrderDto, @Req() req: Request) {
+    return this.ordersService.create({
+      ...createOrderDto,
+      client_id: req['user'].sub,
+    });
   }
 
   @Get()
-  findAll() {
-    return this.ordersService.findAll();
+  findAll(@Req() req: Request) {
+    console.log(req['user']);
+    return this.ordersService.findAll(req['user'].sub);
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.ordersService.findOne(+id);
+  findOne(@Param('id') id: string, @Req() req: Request) {
+    return this.ordersService.findOne(id, req['user'].sub);
   }
 }
