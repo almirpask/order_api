@@ -13,6 +13,7 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzdWIiOiIxIiwiaWF0IjoxNzA2NjU5MjE5LCJleHAiOjE3MDY3NDU2MTl9.3gtkOWcXGmWHeJ-zzk8VHQBU_FLPy1aRBMANVPwk_WY
 
 ###
 POST http://localhost:3000/orders
