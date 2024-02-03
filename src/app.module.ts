@@ -14,8 +14,8 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'db',
-      port: 3307,
+      host: 'order_db',
+      port: 3306,
       username: 'root',
       password: 'root',
       database: 'order_api',

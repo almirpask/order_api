@@ -10,9 +10,9 @@ services:
       - .:/app
     command: ./entrypoint.sh
     depends_on:
-      - db
+      - order_db
       - rabbitmq
-  db:
+  order_db:
     image: mysql:8.0.30
     ports:
       - 3307:3306
