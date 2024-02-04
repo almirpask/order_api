@@ -121,7 +121,7 @@ async function bootstrap() {
       id: '0afa7630-4fc1-4d69-beed-4f8f15becadc',
       name: 'Product 16',
       description: 'Description 16',
-      price: 1600,
+      price: 20,
       image_url: 'http://localhost:9000/products/16.png',
     },
     {
