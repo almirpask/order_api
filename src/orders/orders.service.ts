@@ -45,7 +45,7 @@ export class OrdersService {
     await this.amqpConnection.publish('amq.direct', 'OrderCreated', {
       order_id: order.id,
       card_hash: createOrderDto.card_hash,
-      total: order.total,
+      total: +order.total,
     });
     console.log('order created');
     return order;
